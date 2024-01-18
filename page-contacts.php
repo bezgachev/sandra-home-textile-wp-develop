@@ -64,14 +64,8 @@ Template Post Type: page
 					echo 'geo="' . $yandekskarty['contacts-geo'] . '"';
 					echo '2gis="' . $yandekskarty['contacts-2gis'] . '">';
 					echo '' . $yandekskarty['contacts-gorod'] . ', ' . $yandekskarty['contacts-tip']['label'] . '</span>';
-
-
-
 				}
 
-				
-
-				
 			} ?>
 			</div>
 		</div>
@@ -188,7 +182,6 @@ Template Post Type: page
 						<span class="report__ok d-hide">Сообщение успешно отправлено</span>
 					</div>
 				</div>
-
 
 			</form>
 		</div>

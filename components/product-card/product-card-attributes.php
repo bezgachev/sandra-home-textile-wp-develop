@@ -4,7 +4,6 @@
 global $product;
 $args = get_query_var('params_product_card');
 $id = $args['product_id'];
-//$attribute_sizes = array( 6, 7, 8, 9, 10);
 $attribute_sizes = array( 'razmer-pokryvala', 'razmer-pledy', 'razmer-shtory', 'razmer-chehly-dlya-mebeli', 'razmer-postelnoe-belyo' );
 $material = $product->get_attribute('material');
 $color = $product->get_attribute('czvet');
@@ -12,16 +11,6 @@ $price = get_post_meta( $id, '_regular_price', true); // основная цен
 $sale = get_post_meta( $id, '_sale_price', true); 	//цена со скидкой
 $price_space = number_format((int)$price, 0, '', '&nbsp;');
 $sale_space = number_format((int)$sale, 0, '', '&nbsp;');
-// $product_id = $args['product_id'];
-// $product_url = $args['product_url'];
-
-// 'product_id' => $product_id,
-// 'product_url' => $product_url,
-// 'wrapper_class' => $wrapper_class,
-// 'swiper_container' => $swiper_container,
-// 'gallerys' => $gallerys,
-// 'image_size' => $image_size
-
 ?>
 
 <a class="descr-card__title" href="<?=$args['product_url']?>"><?=get_the_title($id);?></a>
@@ -55,4 +44,3 @@ $sale_space = number_format((int)$sale, 0, '', '&nbsp;');
     }?>
 </div>
 <div class="descr-card__cart add-to-cart-product-js"></div>
-   

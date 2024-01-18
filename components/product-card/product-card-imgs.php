@@ -24,16 +24,3 @@ if ($args['gallerys'] == true) {
         }
     }
 }
-
-//echo '</div>';
-// if (empty($img_thumb)) {
-//     $img_thumb_default_tag = apply_filters( 'woocommerce_cart_item_thumbnail', $product->get_image($image_size));
-//     preg_match_all('/<img[^>]+src="?\'?([^"\']+)"?\'?[^>]*>/i', $img_thumb_default_tag, $img_thumb_defaults, PREG_SET_ORDER);
-//     foreach ($img_thumb_defaults as $img_thumb_default) {
-//         //echo $img_thumb_default[1];
-//         echo '<img data-src="' . home_url() . $img_thumb_default[1] . '" src="' . get_template_directory_uri() . '/assets/img/pixel.png" class="swiper-lazy"><div class="swiper-lazy-preloader"></div>';
-//     }
-// }
-// else {
-//     echo '<img data-src="' . esc_url($img_thumb) . '" src="' . get_template_directory_uri() . '/assets/img/pixel.png" class="swiper-lazy"><div class="swiper-lazy-preloader"></div>';
-// }

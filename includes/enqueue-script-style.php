@@ -12,30 +12,19 @@ function remove_cssjs_ver( $src ) {
 
 add_action( 'wp_enqueue_scripts', 'style_theme' );
 function style_theme() {	
-	//wp_enqueue_style( 'utf', get_template_directory_uri() . '/assets/css/utf.css');
-	// $swiper = get_stylesheet_directory() . '/assets/css/swiper.min.css';
-	// wp_enqueue_style( 'swiper', get_stylesheet_directory_uri().'/assets/css/swiper.min.css?leave=1', null, filemtime($swiper));
-
 	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/assets/css/swiper.min.css');
-
 	$main = get_stylesheet_directory() . '/assets/css/style.min.css';
 	wp_enqueue_style( 'main', get_stylesheet_directory_uri().'/assets/css/style.min.css?leave=1', null, filemtime($main) );
 	$woocommerce = get_stylesheet_directory() . '/assets/css/woocommerce.css';
 	wp_enqueue_style( 'woocommerce', get_stylesheet_directory_uri().'/assets/css/woocommerce.css?leave=1', null, filemtime($woocommerce) );
-
-
-	
 }
-
 
 add_action( 'wp_enqueue_scripts', 'scripts_theme' );
 function scripts_theme() {	
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', 'https://code.jquery.com/jquery-2.2.4.min.js', false, null, true );
 	wp_enqueue_script( 'jquery' );
-	// wp_enqueue_script( 'swiper', get_template_directory_uri() . '/assets/js/swiper.min.js', array('jquery'), null, true);
-	// wp_enqueue_script( 'maskedinput', get_template_directory_uri() . '/assets/js/maskedinput.js', array('jquery'), null, true);
-	// wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), null, true);
+
 	$swiper = get_stylesheet_directory() . '/assets/js/swiper.min.js';
 	wp_enqueue_script( 'swiper', get_template_directory_uri().'/assets/js/swiper.min.js?leave=1', array('jquery'), filemtime($swiper), true);
 	$maskedinput = get_stylesheet_directory() . '/assets/js/maskedinput.js';
@@ -52,15 +41,10 @@ function scripts_theme() {
 		wp_enqueue_script( 'map', get_template_directory_uri().'/assets/js/ymaps.js?leave=1', array('jquery'), filemtime($map), true);
 	}	
 
-
 	wp_enqueue_script( 'jquery-form' );
 	// Подключаем файл скрипта формы обратной связи и заказа звонка
-
-	//wp_enqueue_script('feedback', get_template_directory_uri() . '/assets/js/feedback.js', array('jquery'), null, true);
 	$feedback = get_stylesheet_directory() . '/assets/js/feedback.js';
 	wp_enqueue_script( 'feedback', get_template_directory_uri().'/assets/js/feedback.js?leave=1', array('jquery'), filemtime($feedback), true);
-
-
 
 	// Задаем данные обьекта ajax
 	wp_localize_script(
@@ -72,11 +56,8 @@ function scripts_theme() {
 		)
 	);
 
-
 	$policy = get_stylesheet_directory() . '/assets/js/policy.js';
 	wp_enqueue_script( 'policy', get_template_directory_uri().'/assets/js/policy.js?leave=1', array('jquery'), filemtime($policy), true);
-
-
 
 	// Задаем данные обьекта ajax
 	wp_localize_script(
@@ -95,8 +76,4 @@ function scripts_theme() {
 			wp_enqueue_script( 'video', get_template_directory_uri().'/assets/js/video.js?leave=1', null, filemtime($video), true);
 		}
 	}
-	
-
-
-
 }

@@ -2,7 +2,6 @@
 	exit;
 }
 
-
 add_action( 'init', 'true_remove_woo_image_sizes', 999 ); // отключение ненужных размеров img WP (это все нужно в конце func.php!)
 function true_remove_woo_image_sizes() {
 	remove_image_size( 'woocommerce_single' );

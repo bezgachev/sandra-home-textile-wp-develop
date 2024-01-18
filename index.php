@@ -257,8 +257,6 @@
                             ),
                         ];
 
-
-
                     //  ТОВАРЫ АКЦИИ С НАРАСТАЮЩЕЙ СОРТИРОВКОЙ
                     $products_sale = [
                     'post_type'      => 'product',
@@ -304,8 +302,7 @@
                             get_template_part('components/product-card/product-card', null, $params);
                             ?>
 
-                        
-
+                    
                     <? 
                     } //endwhile 
                     wp_reset_postdata(); endif;  
@@ -336,8 +333,6 @@
                             
                             
                             ?>
-                        
-
                     <? 
                     } //endwhile 
                     wp_reset_postdata(); endif;  
@@ -368,15 +363,12 @@
                             get_template_part('components/product-card/product-card', null, $params);
                             
                             ?>
-                       
-
+                
                     <? 
                     } //endwhile 
                     wp_reset_postdata(); endif;  
                     //КОНЕЦ ВЫВОДА ТОВАРЫ АКЦИИ
                     ?>
-
-
 
                 </div>
             </div>
@@ -418,7 +410,6 @@
 								else {
 									$tel = $main_office_tel;
 								}
-
 							}
 
                             $part1 = mb_substr($tel, 1, 3, 'UTF8');
@@ -444,14 +435,7 @@
                             echo 'geo="' . $yandekskarty['contacts-geo'] . '"';
                             echo '2gis="' . $yandekskarty['contacts-2gis'] . '">';
                             echo '' . $yandekskarty['contacts-gorod'] . ', ' . $yandekskarty['contacts-tip']['label'] . '</span>';
-
-
-			
                         }
-
-                        
-                    
-						
                     } ?>
 
                     </div>

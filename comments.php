@@ -1,4 +1,4 @@
-<?php
+<?
 /**
  * The template for displaying comments
  *
@@ -22,12 +22,12 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
 
-	<?php
+	<?
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
 		<h2 class="comments-title">
-			<?php
+			<?
 			$weblitex_comment_count = get_comments_number();
 			if ( '1' === $weblitex_comment_count ) {
 				printf(
@@ -46,10 +46,10 @@ if ( post_password_required() ) {
 			?>
 		</h2><!-- .comments-title -->
 
-		<?php the_comments_navigation(); ?>
+		<? the_comments_navigation(); ?>
 
 		<ol class="comment-list">
-			<?php
+			<?
 			wp_list_comments(
 				array(
 					'style'      => 'ol',
@@ -59,14 +59,14 @@ if ( post_password_required() ) {
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php
+		<?
 		the_comments_navigation();
 
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'weblitex' ); ?></p>
-			<?php
+			<p class="no-comments"><? esc_html_e( 'Comments are closed.', 'weblitex' ); ?></p>
+			<?
 		endif;
 
 	endif; // Check for have_comments().

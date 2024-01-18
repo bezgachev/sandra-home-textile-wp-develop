@@ -7,7 +7,6 @@ if (!$product_attributes) {
 	return;
 }
 ?>
-
 <div class="product-descr__specifications">
 	<h3 class="title-h3">Характеристики:</h3>
 	<div class="specifications">

@@ -2,7 +2,6 @@
 	exit;
 }
 
-
 add_action( 'wp_ajax_policy_action', 'ajax_action_policy' );
 add_action( 'wp_ajax_nopriv_policy_action', 'ajax_action_policy' );
 function ajax_action_policy() {

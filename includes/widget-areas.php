@@ -17,7 +17,6 @@ function true_register_wp_sidebars() {
 	);
 }
 
-
 add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
  
 function my_custom_dashboard_widgets() {

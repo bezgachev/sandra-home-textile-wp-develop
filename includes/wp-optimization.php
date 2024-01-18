@@ -12,9 +12,6 @@ function dataUrlDirectory( $tag, $handle ) {
     return str_replace( 'id', 'data-dir="'.$dataUrlDirectory.'"id', $tag );
 }
 
-
-
-
 //Удаляем уведомление об обновлении WordPress для всех кроме админа
 add_action( 'admin_head', function () {
 	if ( ! current_user_can( 'manage_options' ) ) {
@@ -23,13 +20,11 @@ add_action( 'admin_head', function () {
 	}
 } );
 
-
 //удаляем мета-тег версии движка с DOM дерева
 add_filter('the_generator', 'remove_wpversion');
 function remove_wpversion() {
 	return '';
 }
-
 
 //удаление ненужных текстов в DOM дереве(type для css)
 add_filter('style_loader_tag', 'clean_style_tag');
@@ -42,7 +37,6 @@ add_filter('script_loader_tag', 'clean_script_tag');
 function clean_script_tag($src) {
     return str_replace("type='text/javascript'", '', $src);
 }
-
 
 //Удалить ссылки на RSS ленты
 function fb_disable_feed(){wp_redirect(get_option('siteurl'));}
@@ -123,14 +117,12 @@ remove_action( 'wp_head', 'wp_resource_hints', 2 );
 //Отключение rel shortlink
 remove_action( 'wp_head', 'wp_shortlink_wp_head' );
 
-
 add_action('wp_footer','wooexperts_remove_block_data',0);
 add_action('admin_enqueue_scripts','wooexperts_remove_block_data',0);
 function wooexperts_remove_block_data(){ 
     remove_filter('wp_print_footer_scripts',array('Automattic\WooCommerce\Blocks\Assets','print_script_block_data'),1);
     remove_filter('admin_print_footer_scripts',array('Automattic\WooCommerce\Blocks\Assets','print_script_block_data'),1);
 }
-
 
 //Скрываем пункты меню в админке
 add_action('admin_menu', 'remove_admin_menu');
@@ -154,7 +146,6 @@ function remove_admin_menu()
   //remove_menu_page('index.php'); // Консоль
 }
 
-
 add_filter(
     'document_title_parts',
     function($parts) {
@@ -163,7 +154,6 @@ add_filter(
     }
 );
 
-
 //Отключение визуального редактора
 //add_filter( 'user_can_richedit', '__return_false' );
 
@@ -171,30 +161,4 @@ add_filter(
 add_filter('admin_footer_text', 'remove_footer_admin');
 function remove_footer_admin () {
 	echo 'Разработка Интернет-магазинов <a href="https://weblitex.ru" target="_blank">ООО "Лайтекс"</a> | E-mail: <a href="mailto:info@weblitex.ru">info@weblitex.ru</a> | Сайт разработан на основе WordPress.</p>';
-
-    // <style>
-	// #dropdown_product_type {display:none !important;}
-	// select[name="stock_status"]{display:none !important;}
-	// .postbox-header .hndle.ui-sortable-handle .type_box.hidden {display:none !important;}
-	// .postbox-header .hndle.ui-sortable-handle .product-type{display:none !important;}
-	// #postdivrich #wp-content-media-buttons{display:none !important;}
-	// #woocommerce-fields.inline-edit-col .dimension_fields, #woocommerce-fields.inline-edit-col .inline-edit-group, #woocommerce-fields.inline-edit-col .stock_status_field, .inline-edit-tags-wrap, .inline-edit-group.wp-clearfix, #woocommerce-fields.inline-edit-col .text:nth-child(3) {display:none !important;}
-	// .term-description-wrap, #linked_product_data .options_group p.form-field:nth-child(2), #postexcerpt .inside #wp-excerpt-editor-tools, #postexcerpt .inside #qt_excerpt_toolbar { display: none !important; }
-	// #mceu_86 {display: none !important; }
-	// #order_data .order_data_column_container .order_data_column:nth-child(3) .edit_address,
-	// #order_data .order_data_column_container .order_data_column:nth-child(3) .address p:nth-child(1),
-	// #order_data .order_data_column_container .order_data_column:nth-child(3) h3 {display: none !important; }
-	// #order_data .order_data_column_container .order_data_column:nth-child(3) .order_data_column_wide h3 {display:block !important; }
-	// #order_data .order_data_column_container .order_data_column:nth-child(2) .edit_address ._billing_last_name_field,
-	// #order_data .order_data_column_container .order_data_column:nth-child(2) .edit_address ._billing_company_field,
-	// #order_data .order_data_column_container .order_data_column:nth-child(2) .edit_address ._billing_address_2_field,
-	// #order_data .order_data_column_container .order_data_column:nth-child(2) .edit_address ._billing_state_field {display: none !important; }
-	// </style>
-	// <script type="text/javascript">
-	// var dataClient;
-	// dataClient = document.querySelectorAll("#order_data > div.order_data_column_container > div.order_data_column:nth-child(2) > h3");
-	// for (var i = 0; i < dataClient.length; i++) {
-	// 	dataClient[i].outerHTML = "<h3>Данные клиента<a href=\"#\" class=\"edit_address\">Изменить</a></h3>";
-	// }
-	// </script>
 }

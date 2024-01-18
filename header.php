@@ -7,12 +7,6 @@
 	<?wp_head();?>
 </head>
 <body>
-	<? 
-// $current_user = wp_get_current_user();
-// $user_id = $current_user->ID;
-// update_user_meta( $user_id, 'favorites', '');
-// update_favorites_product_authorization_user();
-	?>
 <header>
 	<section class="header">
 		<div class="header__mob-navigation">
@@ -74,11 +68,7 @@
 					}
 
 				?>
-				
-				
-				
 				</li>
-
 
 				<li class="mob-navigation__link likelist-mob-count <? if( is_page(24) ) {
 				echo 'active">'; }
@@ -92,21 +82,13 @@
 				</svg>	
 				Избранное</a>
 			
-			
 					<?udpate_favorites_product_count('header-bottom');?>
 
-
-			
-			
-			
-			
 				</li>
-
 
 				<li class="mob-navigation__link <? if(is_account_page()) {
 					echo 'active">'; }
 					else { echo '">'; } ?>
-
 
 				<a href="<? echo wc_get_page_permalink('myaccount')?>">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 26">
@@ -166,7 +148,6 @@
 				<div class="header__icon">
 					<a class="header__menu_account" href="<?=wc_get_page_permalink('myaccount')?>"><img src="<?=get_template_directory_uri(); ?>/assets/icons/icon-men.svg" alt="icon-menu"></a>
 
-
 					<a class="header__menu_favourites" href="<?=get_the_permalink(24);?>">
 						<img src="<?=get_template_directory_uri(); ?>/assets/icons/icon-like.svg" alt="icon-like">
 						<?udpate_favorites_product_count('header');?>
@@ -175,7 +156,6 @@
 					<!-- Обвертка для вывода кнопки корзины со счетчиком -->
 					
 					<a class="header__menu_basket desktop" href="<?= wc_get_cart_url(); ?>"><img src="<?=get_template_directory_uri(); ?>/assets/icons/icon-card.svg" alt="icon-cart"></a>
-
 
 				</div>
 				<button id="btn-burger"></button>

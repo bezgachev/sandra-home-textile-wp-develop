@@ -2,7 +2,6 @@
 	exit;
 }
 
-
 // свой класс построения главного меню в шапке:
 class header_main_menu extends Walker_Nav_Menu {
 	function start_el(&$output, $item, $depth=0, $args=[], $id=0) {
@@ -29,8 +28,6 @@ class header_main_menu extends Walker_Nav_Menu {
 		$output .= '</li>';
 	}
 }
-
-
 
 // свой класс построения бокового меню:
 class sibebar_menu extends Walker_Nav_Menu {
@@ -59,8 +56,6 @@ class sibebar_menu extends Walker_Nav_Menu {
 	}
 }
 
-
-
 // свой класс построения каталога у header без icon:
 class catalog_menu extends Walker_Nav_Menu {
 	function start_el(&$output, $item, $depth=0, $args=[], $id=0) {
@@ -78,9 +73,6 @@ class catalog_menu extends Walker_Nav_Menu {
 		$output .= '</li>';
 	}
 }
-
-
-
 
 // свой класс построения каталога у header с icon:
 class catalog_menu_icon extends Walker_Nav_Menu {
@@ -108,7 +100,6 @@ class catalog_menu_icon extends Walker_Nav_Menu {
 	}
 }
 
-
 // свой класс построения основного каталога на страницах:
 class catalog_main extends Walker_Nav_Menu {
 	function start_el(&$output, $item, $depth=0, $args=[], $id=0) {
@@ -129,7 +120,6 @@ class catalog_main extends Walker_Nav_Menu {
 		$output .= '</a>';
 	}
 }
-
 
 // свой класс построения каталога у footer:
 class catalog_footer extends Walker_Nav_Menu {

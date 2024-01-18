@@ -36,8 +36,6 @@ function main_phone_hortcode() {
 	}
 }
 
-
-
 add_shortcode( 'call_form', 'call_form' );
 function call_form() {
 	ob_start();
@@ -80,18 +78,14 @@ function call_form() {
             <input class="form__btn btn" type="submit" value="Заказать звонок" data-text="Заказать звонок">
         </form>
 
-
-
         <button class="close-button"></button>
     </div>
 	<div id="overlay"></div>
-	<!-- Popap: если отправка успешна к H3 добовляется класс popup-ok иначе popup-error --------------------------------------- -->
+
 	<div class="modal modal-access">
 		<h3 class="title-h2 modal-access__title popup-ok">Заявка успешно отправлена!</h3>
 		<p class="text modal-access__text">В самое ближайшее время с Вами свяжется наш менеджер.</p>
 	</div>
-
-	<?php
-
+	<?
 	return ob_get_clean();
 }

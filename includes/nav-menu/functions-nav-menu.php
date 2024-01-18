@@ -118,4 +118,3 @@ function desktop_page_catalog_nav_menu(){
         'walker' => new catalog_main()   
     )); 
 }
-
